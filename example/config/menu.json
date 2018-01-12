@@ -1,0 +1,13 @@
+{
+    "name": "Menu",
+    "desc": "Menu for website",
+    "code": "new Menu({container: menu})",
+    "options": [
+        {
+            "argument": "container",
+            "desc": "ul element of menu list",
+            "type": "dom object",
+            "default": ""
+        }
+    ]
+}

@@ -1,0 +1,48 @@
+{
+    "name": "Draggable",
+    "desc": "Use to draggable one element",
+    "code": "new Draggable({container: dialog,cursor: 'move'})",
+    "options": [
+        {
+            "argument": "container",
+            "desc": "a dom object for drag",
+            "type": "dom object",
+            "default": ""
+        },
+        {
+            "argument": "adjustPosition",
+            "desc": "If adjust element position when drag done",
+            "type": "boolean",
+            "default": "true"
+        },
+        {
+            "argument": "margin",
+            "desc": "Margin size from browser border",
+            "type": "number",
+            "default": "20"
+        },{
+            "argument": "cursor",
+            "desc": "Cursor config for drag element",
+            "type": "string",
+            "default": "default"
+        },
+        {
+            "argument": "dragZone",
+            "desc": "Target area of the drag event triggered",
+            "type": "dom object",
+            "default": ""
+        },
+        {
+            "argument": "except",
+            "desc": "Element can not be drag",
+            "type": "dom object",
+            "default": ""
+        },
+        {
+            "argument": "stop",
+            "desc": "Call this function when this element drag done",
+            "type": "function",
+            "default": ""
+        }
+    ]
+}

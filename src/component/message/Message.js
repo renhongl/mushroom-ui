@@ -2,6 +2,8 @@
  * 
  */
 
+import { extend } from '../tool.js';
+
 export default class Message {
 	constructor(options) {
 		this.messageDOM = document.createElement('span');
@@ -12,7 +14,7 @@ export default class Message {
 			delay: 4000,
 			type: 'infor'
 		};
-		this.options = this._extend(this.options, options);
+		this.options = extend(this.options, options);
 		this._init();
 	}
 	
@@ -26,8 +28,24 @@ export default class Message {
 			this.messageDOM.style.opacity = 0;
 			setTimeout(function() {
 				document.body.removeChild(this.messageDOM);
+				this._resetPosition();
 			}.bind(this), 1000);
 		}.bind(this), this.options.delay)
+	}
+
+	_resetPosition() {
+		let items = document.querySelectorAll('.' + this.className + '-' + this.options.position);
+		Array.prototype.slice.call(items).forEach((item, i) => {
+			if(this.options.position !== 'center-bottom') { 
+				let top = item.style.top;
+				top = top.replace('px', '');
+				item.style.top = Number(top) - 50 + 'px';
+			} else {
+				let bottom = item.style.bottom;
+				bottom = bottom.replace('px', '');
+				item.style.bottom = Number(bottom) - 50 + 'px';
+			}
+		});
 	}
 	
 	_render() {

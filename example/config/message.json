@@ -1,0 +1,30 @@
+{
+    "name": "Message",
+    "desc": "Message for display global information",
+    "code": "new Message()",
+    "options": [
+        {
+            "argument": "position",
+            "desc": "message position of window",
+            "type": "string",
+            "default": "center-top"
+        },
+        {
+            "argument": "message",
+            "desc": "message conent of display",
+            "type": "string",
+            "default": "default message"
+        },
+        {
+            "argument": "delay",
+            "desc": "how long time to display",
+            "type": "number",
+            "default": "4000"
+        },{
+            "argument": "type",
+            "desc": "message type",
+            "type": "string",
+            "default": "infor"
+        }
+    ]
+}

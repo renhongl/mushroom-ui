@@ -1,0 +1,80 @@
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+html{
+    position: relative;
+}
+
+body{
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    height: 100%;
+    width: 85%;
+    margin: 0 auto;
+}
+
+code{
+    padding: 20px;
+    color: #fff;
+    background: #e85b74;
+    display: block;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 100px;
+}
+
+td{
+    height: 30px;
+    width: 25%;
+    border: 1px solid #80808045;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    padding: 5px;
+    padding-left: 20px;
+    color: grey;
+}
+
+th{
+    background: #e85b74;
+    border: 1px solid #fff;
+    height: 40px;
+    color: #fff;
+}
+
+h1, h2{
+    padding-top: 70px;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.example{
+    min-height: 200px;
+}
+
+/* ---------------global end------------------- */
+
+
+
+
+/* ---------------------component style-------------------------- */
+
+.dialog{
+    width: 200px;
+    height: 200px;
+    background: #e85b74;
+    position: absolute;
+    z-index: 1;
+}
+
+/*----------------------- component style end----------------------- */
