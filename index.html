@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,28 +9,58 @@
     <link rel="stylesheet" href="./src/mr.css">
     <title>Mushroom UI</title>
 </head>
-<body>
-    <header>
-        MR UI
-    </header>
-    <section class="left-container">
-        <ul>
-            <li key="1"><a href="example/index.html" class="active" target="example-iframe">Home</a></li>
-            <li key="2"><a href="example/message.html" target="example-iframe">Message</a></li>
-            <li key="3"><a href="example/draggable.html" target="example-iframe">Draggable</a></li>
-            <li key="4"><a href="example/menu.html" target="example-iframe">Menu</a></li>
-        </ul>
-    </section>
 
-    <section class="main-container">
-        <iframe id="example-iframe" name="example-iframe" src="example/index.html" frameborder="0"></iframe>
-    </section>
+<body>
+    <div class="container">
+        <header>
+            MR UI
+        </header>
+        <div class="tab">
+            <ul>
+                <li key="1">Home</li>
+                <li key="2">Document</li>
+                <li key="3">Download</li>
+                <li key="4">Blob</li>
+            </ul>
+            <div>
+                    <div>Home</div>
+                    <div>
+                        <section class="left-container">
+                            <ul>
+                                <li key="1">
+                                    <a href="example/index.html" class="active" target="example-iframe">Home</a>
+                                </li>
+                                <li key="2">
+                                    <a href="example/message.html" target="example-iframe">Message</a>
+                                </li>
+                                <li key="3">
+                                    <a href="example/draggable.html" target="example-iframe">Draggable</a>
+                                </li>
+                                <li key="4">
+                                    <a href="example/menu.html" target="example-iframe">Menu</a>
+                                </li>
+                                <li key="5">
+                                    <a href="example/tab.html" target="example-iframe">Tab</a>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="main-container">
+                            <iframe id="example-iframe" name="example-iframe" src="example/index.html" frameborder="0"></iframe>
+                        </section>
+                    </div>
+                    <div>Download</div>
+                    <div>Blob</div>
+            </div>
+        </div>
+    </div>
+
     <script type="module">
-        import { Menu } from './src/mr.js';
-        let menu = document.querySelector('.left-container ul');
-        new Menu({
-            container: menu
-        })
+        import { Menu, Tab} from './src/mr.js'; 
+        let menu = document.querySelector('.left-container ul'); 
+        let tab = document.querySelector('.tab');
+        new Menu({ container: menu });
+        new Tab({ container: tab });
     </script>
 </body>
+
 </html>

@@ -60,6 +60,7 @@ h1, h2{
 
 .example{
     min-height: 200px;
+    height: 200px;
 }
 
 /* ---------------global end------------------- */

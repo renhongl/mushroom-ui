@@ -1,0 +1,13 @@
+{
+    "name": "Tab",
+    "desc": "Tab for website",
+    "code": "new Tab({container: tab})",
+    "options": [
+        {
+            "argument": "container",
+            "desc": "ul element of tab list",
+            "type": "dom object",
+            "default": ""
+        }
+    ]
+}
