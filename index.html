@@ -13,7 +13,8 @@
 <body>
     <div class="container">
         <header>
-            MR UI
+            <span class="title">Mr UI</span>
+            <span class="logo"></span>
         </header>
         <div class="tab">
             <ul>
@@ -42,6 +43,9 @@
                                 <li key="5">
                                     <a href="example/tab.html" target="example-iframe">Tab</a>
                                 </li>
+                                <li key="6">
+                                    <a href="example/button.html" target="example-iframe">Button</a>
+                                </li>
                             </ul>
                         </section>
                         <section class="main-container">
@@ -55,11 +59,16 @@
     </div>
 
     <script type="module">
-        import { Menu, Tab} from './src/mr.js'; 
+        import { Menu, Tab, Message} from './src/mr.js'; 
         let menu = document.querySelector('.left-container ul'); 
         let tab = document.querySelector('.tab');
         new Menu({ container: menu });
         new Tab({ container: tab });
+        setTimeout(() => {
+            new Message({
+                message: 'Welcome to Murhroom UI'
+            })
+        }, 2000)
     </script>
 </body>
 

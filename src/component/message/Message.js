@@ -59,14 +59,5 @@ export default class Message {
 		}
 		document.body.appendChild(this.messageDOM);
 	}
-	
-	_extend(target, source){
-		for (var key in source) {
-			if (source.hasOwnProperty(key)) {
-				target[key] = source[key];
-			}
-		}
-		return target;
-	}
 }
 //---------------Plugin end---------------------------

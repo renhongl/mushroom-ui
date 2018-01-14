@@ -10,7 +10,7 @@
     display: flex;
     margin: 0;
     padding: 0;
-	height: 50px;
+	height: 60px;
 	float: right;
     margin-right: 50px;
 }
@@ -30,7 +30,9 @@
 	box-sizing: border-box;
     margin-left: 20px;
     border-bottom: 3px solid #fff;
-    font-size: 13px;
+	font-size: 13px;
+	position: relative;
+	/* overflow: hidden; */
 }
 
 .mr-tab .mr-tab-li:hover{
@@ -56,3 +58,30 @@
 	transition: all .5s ease-in-out;
 	clear: both;
 }
+
+.mr-tab-li .click{
+    content: "";
+    left: 50%;
+    top: 50%;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: rgb(221, 218, 218);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    animation: mr-tab-click .5s;
+    animation-fill-mode: forwards;
+    opacity: 0.2;
+    border-radius: 50%;
+    opacity: 0.7;
+	pointer-events: none;
+	z-index: 10;
+  }
+  
+  @keyframes mr-tab-click{
+    to{
+      width: 100px;
+      height: 100px;
+      opacity: 0;
+    }
+  }

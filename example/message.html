@@ -40,34 +40,61 @@
             </table>
     </section>
     <script type="module">
-        import { Message } from '../src/mr.js';
+        import { Message, Button} from '../src/mr.js';
         import fetchConfig from './tool.js';
         fetchConfig('./config/message.json');
 
-        document.getElementById('btn1').onclick = function () {
+        let btn1 = document.getElementById('btn1');
+        let btn2 = document.getElementById('btn2');
+        let btn3 = document.getElementById('btn3');
+        let btn4 = document.getElementById('btn4');
+
+        btn1.onclick = function () {
             new Message();
         }
-        document.getElementById('btn2').onclick = function () {
+        btn2.onclick = function () {
             new Message({
                 position: 'center-bottom',
                 type: 'warning',
                 message: "This is a center bottom message"
             });
         }
-        document.getElementById('btn3').onclick = function () {
+        btn3.onclick = function () {
             new Message({
                 position: 'left-top',
                 type: 'success',
                 message: "This is a success message"
             });
         }
-        document.getElementById('btn4').onclick = function () {
+        btn4.onclick = function () {
             new Message({
                 position: 'right-top',
                 type: 'error',
                 message: "This is a right top and error message"
             });
         }
+
+        new Button({
+            container: btn1,
+            type: 'error'
+        })
+
+        new Button({
+            container: btn2,
+            type: 'infor'
+        })
+
+        new Button({
+            container: btn3,
+            type: 'success'
+        })
+
+        new Button({
+            container: btn4,
+            type: 'warning'
+        })
+
+        
     </script>
 
 </body>

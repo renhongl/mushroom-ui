@@ -23,16 +23,11 @@ export default class Menu {
         coverEle.setAttribute('class', 'cover');
         container.appendChild(coverEle);
         container.setAttribute('class', this.className + ' ' + this.className + '-' + this.options.type);
-        container.onclick = function (e) {
-            let key = Number(e.target.parentNode.getAttribute('key'));
-            if(key){
-                coverEle.style.top = 50 * (key - 1) + 'px';
-            }
-            Array.prototype.slice.call(children).forEach((item, i) => {
-                item.setAttribute('class', '');
-            });
-            e.target.setAttribute('class', 'active');
-        }
+        this._clickMenu(container, children, coverEle);
+        this._mouseMenu(container, children, coverEle);
+    }
+
+    _mouseMenu(container, children, coverEle) {
         container.onmouseover = function(e) {
             let key = Number(e.target.parentNode.getAttribute('key'));
             if(key){
@@ -41,12 +36,30 @@ export default class Menu {
         }
     }
 
-    _extend(target, source){
-		for (var key in source) {
-			if (source.hasOwnProperty(key)) {
-				target[key] = source[key];
-			}
-		}
-		return target;
-	}
+    _clickMenu(container, children, coverEle) {
+        container.onclick = (e) => {
+            let key = Number(e.target.parentNode.getAttribute('key'));
+            if(key){
+                coverEle.style.top = 50 * (key - 1) + 'px';
+            }
+            Array.prototype.slice.call(children).forEach((item, i) => {
+                item.setAttribute('class', '');
+            });
+            e.target.setAttribute('class', 'active');
+            this._menuRain(e);
+        }
+    }
+
+    _menuRain(e) {
+        let span = document.createElement('span');
+        let x = e.offsetX;
+        let y = e.offsetY;
+        span.setAttribute('class', 'click');
+        span.style.left = x + 'px';
+        span.style.top = y + 'px';
+        e.target.parentNode.appendChild(span);
+        setTimeout(() => {
+            e.target.parentNode.removeChild(span);
+        }, 500);
+    }
 }

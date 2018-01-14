@@ -82,7 +82,7 @@
 	display: inline-block;
 	width: 18px;
 	height: 18px;
-	background: red;
+	background: #e85b74;
 	border-radius: 50%;
 	color: #fff;
 	left: 15px;
@@ -98,7 +98,7 @@
 	display: inline-block;
 	width: 18px;
 	height: 18px;
-	background: #9A7306;
+	background: rgb(231, 174, 15);
 	border-radius: 50%;
 	color: #fff;
 	left: 15px;

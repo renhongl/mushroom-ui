@@ -1,0 +1,19 @@
+{
+    "name": "Button",
+    "desc": "Button for website",
+    "code": "new Button({container: button, type: 'infor'})",
+    "options": [
+        {
+            "argument": "container",
+            "desc": "ul element of button list",
+            "type": "dom object",
+            "default": ""
+        },
+        {
+            "argument": "type",
+            "desc": "Button type when render",
+            "type": "string",
+            "default": "default"
+        }
+    ]
+}

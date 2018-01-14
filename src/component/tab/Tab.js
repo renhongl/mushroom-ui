@@ -37,8 +37,22 @@ export default class Tab{
 				});
 				li.setAttribute('class', 'mr-tab-li mr-tab-active');
 				this.main.style.transform = 'translateX(-' + (key-1) * 100 + '%)';
+				this._tabRain(e);
 			}
 		})
+	}
+
+	_tabRain(e) {
+		let span = document.createElement('span');
+        let x = e.offsetX;
+        let y = e.offsetY;
+        span.setAttribute('class', 'click');
+        span.style.left = x + 'px';
+        span.style.top = y + 'px';
+        e.target.appendChild(span);
+        setTimeout(() => {
+            e.target.removeChild(span);
+        }, 500);
 	}
 
 	_setContents(key) {

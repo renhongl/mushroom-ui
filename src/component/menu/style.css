@@ -42,6 +42,8 @@
       width: 98%;
       height: 50px;
       list-style-type: none;
+      position: relative;
+      overflow: hidden;
   }
   
   .mr-menu-left a{
@@ -71,6 +73,28 @@
       color: #e85b74 !important;
   }
 
-
-
-
+  .mr-menu-left .click{
+    content: "";
+    left: 50%;
+    top: 50%;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    animation: mr-menu-click .5s;
+    animation-fill-mode: forwards;
+    opacity: 0.2;
+    border-radius: 50%;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  
+  @keyframes mr-menu-click{
+    to{
+      width: 100px;
+      height: 100px;
+      opacity: 0;
+    }
+  }

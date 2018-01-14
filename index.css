@@ -17,13 +17,38 @@ div, ul, li, ol, p{
 }
 
 header{
-    height: 50px;
+    height: 60px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     position: fixed;
     left: 0;
     width: 100%;
     top: 0;
     z-index: -1;
+}
+
+header .logo{
+    background-image: url(./image/mushroom.png);
+    /* color: black; */
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* margin-top: 0px; */
+    position: absolute;
+    top: 50%;
+    left: 62px;
+    transform: translate(-50%,-50%);
+}
+
+header .title{
+    position: absolute;
+    left: 105px;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #e85b74b8;
 }
 
 .left-container{
