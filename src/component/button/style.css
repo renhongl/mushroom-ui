@@ -89,25 +89,25 @@
     background: rgb(90, 212, 90);
 }
 
-.mr-button-move{
+.mr-button-click{
 	display: inline-block;
 	width: 0px;
 	height: 0px;
 	background: #fff;
 	position: absolute;
 	transform: translate(-50%, -50%);
-	animation: mr-button-move .5s;
-	animation-fill-mode: forwards;
-	opacity: 0.2;
+	/* animation: mr-button-click .5s; */
+	/* animation-fill-mode: forwards; */
+	/* opacity: 0.2; */
 	border-radius: 50%;
-	opacity: 0.7;
+	/* opacity: 0.7; */
 	pointer-events: none;
 }
 
-@keyframes mr-button-move{
+/* @keyframes mr-button-click{
 	to{
 		width: 100px;
 		height: 100px;
 		opacity: 0;
 	}
-}
+} */

@@ -26,13 +26,33 @@ export default class Button{
             let x = e.offsetX;
 			let y = e.offsetY;
 			let span = document.createElement('span');
-			span.setAttribute('class', 'mr-button-move')
+			let width = e.target.clientWidth;
+			let height = e.target.clientHeight;
+			let timer;
+			let that =  this;
+			span.setAttribute('class', 'mr-button-click')
 			span.style.left = x + 'px';
 			span.style.top = y + 'px';
-            container.appendChild(span);
-			setTimeout(function() {
-                container.removeChild(span);
-			}, 500)
+			span.style.opacity = 0.5;
+			container.appendChild(span);
+			let times = 40;
+			let stepWidth = (width * 2 - span.clientWidth) / times;
+			let stepOpacity = span.style.opacity / times;
+			timer = requestAnimationFrame(function fn() {
+				if(span.clientWidth < width * 2 || span.clientHeight < height * 2) {
+					that._animation(span, stepWidth, stepOpacity);
+					timer = requestAnimationFrame(fn);
+				} else {
+					container.removeChild(span);
+					cancelAnimationFrame(timer);
+				}
+			});
         })
+	}
+
+	_animation(span, stepWidth, stepOpacity) {
+		span.style.width = span.clientWidth + stepWidth + 'px';
+		span.style.height = span.clientHeight + stepWidth + 'px';
+		span.style.opacity = span.style.opacity - stepOpacity;
 	}
 }

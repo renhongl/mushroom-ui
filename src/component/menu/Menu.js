@@ -58,8 +58,28 @@ export default class Menu {
         span.style.left = x + 'px';
         span.style.top = y + 'px';
         e.target.parentNode.appendChild(span);
-        setTimeout(() => {
-            e.target.parentNode.removeChild(span);
-        }, 500);
+        span.style.opacity = 0.5;
+        let timer;
+        let times = 40;
+        let that = this;
+        let width = e.target.clientWidth;
+		let height = e.target.clientHeight;
+        let stepWidth = (width * 2 - span.clientWidth) / times;
+        let stepOpacity = span.style.opacity / times;
+        timer = requestAnimationFrame(function fn() {
+            if(span.clientWidth < width * 2 || span.clientHeight < height * 2) {
+                that._animation(span, stepWidth, stepOpacity);
+                timer = requestAnimationFrame(fn);
+            } else {
+                e.target.parentNode.removeChild(span);
+                cancelAnimationFrame(timer);
+            }
+        });
     }
+
+    _animation(span, stepWidth, stepOpacity) {
+		span.style.width = span.clientWidth + stepWidth + 'px';
+		span.style.height = span.clientHeight + stepWidth + 'px';
+		span.style.opacity = span.style.opacity - stepOpacity;
+	}
 }

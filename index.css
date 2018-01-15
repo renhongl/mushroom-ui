@@ -27,7 +27,7 @@ header{
 }
 
 header .logo{
-    background-image: url(./image/mushroom.png);
+    /* background-image: url(./image/mushroom.png); */
     /* color: black; */
     display: inline-block;
     width: 30px;
@@ -39,6 +39,18 @@ header .logo{
     top: 50%;
     left: 62px;
     transform: translate(-50%,-50%);
+}
+
+header path {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: dash 5s linear infinite;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
 }
 
 header .title{

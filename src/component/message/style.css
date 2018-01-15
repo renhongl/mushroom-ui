@@ -11,22 +11,22 @@
 	color: rgba(0, 0, 0, 0.7);
 	font-size: 14px;
 	padding-left: 40px;
-	z-index: 2;
+	z-index: 40;
 }
 
 .mr-message-center-top{
 	left: 50%;
 	top: 0;
 	transform: translate(-50%, -100%);
-	animation: mr-go-down .5s ease-in;
-	animation-fill-mode: forwards;
+	animation: mr-go-down .5s ease-in infinite alternate;
+	/* animation-fill-mode: forwards; */
 }
 
 .mr-message-center-bottom{
 	left: 50%;
 	bottom: 0;
 	transform: translate(-50%, 100%);
-	animation: mr-go-up .5s ease-in;
+	animation: mr-go-up .5s ease-in infinite alternate;
 	animation-fill-mode: forwards;
 }
 
@@ -34,7 +34,7 @@
 	left: 0;
 	top: 0;
 	transform: translate(-100%, 50%);
-	animation: mr-go-right .5s ease-in;
+	animation: mr-go-right .5s ease-in infinite alternate;
 	animation-fill-mode: forwards;
 }
 
@@ -42,7 +42,7 @@
 	right: 0;
 	top: 0;
 	transform: translate(100%, 50%);
-	animation: mr-go-left .5s ease-in;
+	animation: mr-go-left .5s ease-in infinite alternate;
 	animation-fill-mode: forwards;
 }
 

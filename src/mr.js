@@ -5,6 +5,7 @@ import Draggable from './component/draggable/index.js';
 import Menu from './component/menu/index.js';
 import Tab from './component/tab/index.js';
 import Button from './component/button/index.js';
+import Carousel from './component/carousel/index.js';
 
 export {
     Message,
@@ -12,4 +13,5 @@ export {
     Menu,
     Tab,
     Button,
+    Carousel,
 }

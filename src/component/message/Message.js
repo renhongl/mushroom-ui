@@ -24,12 +24,15 @@ export default class Message {
 	}
 	
 	_destroy() {
+		setTimeout(function () {
+			this.messageDOM.style.animationPlayState = "paused";
+		}.bind(this), 500);
 		setTimeout(function() {
-			this.messageDOM.style.opacity = 0;
+			this.messageDOM.style.animationPlayState = "running";
 			setTimeout(function() {
 				document.body.removeChild(this.messageDOM);
 				this._resetPosition();
-			}.bind(this), 1000);
+			}.bind(this), 500);
 		}.bind(this), this.options.delay)
 	}
 

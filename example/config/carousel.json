@@ -1,0 +1,13 @@
+{
+    "name": "Carousel",
+    "desc": "Carousel for website",
+    "code": "new Carousel({container: carousel})",
+    "options": [
+        {
+            "argument": "container",
+            "desc": "ul element of carousel list",
+            "type": "dom object",
+            "default": ""
+        }
+    ]
+}
