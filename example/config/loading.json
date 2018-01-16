@@ -1,0 +1,19 @@
+{
+    "name": "Loading",
+    "desc": "Loading for website",
+    "code": "new Loading({container: loading})",
+    "options": [
+        {
+            "argument": "container",
+            "desc": "ul element of loading list",
+            "type": "dom object",
+            "default": ""
+        },
+        {
+            "argument": "type",
+            "desc": "Loading type",
+            "type": "string",
+            "default": "circle"
+        }
+    ]
+}

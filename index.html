@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <div class="loading"></div>
     <div class="container">
         <header>
             <span class="title">Mr UI</span>
@@ -61,10 +62,14 @@
                                 <li key="7">
                                     <a href="example/carousel.html" target="example-iframe">Carousel</a>
                                 </li>
+                                <li key="8">
+                                    <a href="example/loading.html" target="example-iframe">Loading</a>
+                                </li>
                             </ul>
                         </section>
                         <section class="main-container">
-                            <iframe id="example-iframe" name="example-iframe" src="example/index.html" frameborder="0"></iframe>
+                            <div class="iframe-loading"></div>
+                            <iframe id="example-iframe" name="example-iframe" src="" frameborder="0"></iframe>
                         </section>
                     </div>
                     <div>Download</div>
@@ -74,16 +79,75 @@
     </div>
 
     <script type="module">
-        import { Menu, Tab, Message} from './src/mr.js'; 
-        let menu = document.querySelector('.left-container ul'); 
-        let tab = document.querySelector('.tab');
-        new Menu({ container: menu });
-        new Tab({ container: tab });
-        setTimeout(() => {
-            new Message({
-                message: 'Welcome to Murhroom UI'
+        import { Menu, Tab, Message, Loading} from './src/mr.js'; 
+        let iframeLoading = document.querySelector('.iframe-loading');
+
+        function init() {
+            renderMenu();
+            renderTab();
+            renderLoading();
+            renderIframe();
+        }
+        
+        function renderMessage() {
+            setTimeout(() => {
+                new Message({
+                    message: 'Welcome to Murhroom UI'
+                })
+            }, 4000)
+        }
+
+        function renderLoading() {
+            let loading = document.querySelector('.loading');
+            let loadingInstance = new Loading({
+                container: loading,
+                type: 'rect'
             })
-        }, 2000)
+            window.onload = function() {
+                renderMessage();
+                setTimeout(function() {
+                    loadingInstance.destroy();
+                }, 3000);
+            }
+        }
+
+        function renderTab() {
+            let tab = document.querySelector('.tab');
+            new Tab({ container: tab });
+        }
+
+        function renderMenu() {
+            let menu = document.querySelector('.left-container ul'); 
+            new Menu({ container: menu });
+        }
+
+        function renderIframe() {
+            let iframeLoadingInstance;
+            let iframe = document.getElementById('example-iframe');
+            iframeLoadingInstance = new Loading({
+                container: iframeLoading,
+                type: 'rect'
+            })
+            iframe.src = 'example/index.html';
+            iframe.onload = function(){
+                setTimeout(function () {
+                    iframeLoadingInstance.destroy();
+                }, 1000);
+            };  
+
+            let links = document.querySelectorAll('.left-container a');
+            Array.prototype.slice.call(links).forEach(function(link, i) {
+                link.onclick = function() {
+                    iframeLoadingInstance = new Loading({
+                        container: iframeLoading,
+                        type: 'rect'
+                    })
+                    iframe.src = link.getAttribute('href');
+                }
+            })
+        }
+
+        init();
     </script>
 </body>
 
