@@ -16,13 +16,16 @@ export default class Loading {
     }
 
     destroy() {
-        // this.options.container.parentNode.removeChild(this.options.container);
-        this.options.container.style.display = 'none';
+        this.options.container.style.opacity = 0;
         this.options.container.innerHTML = '';
+        setTimeout(function() {
+            this.options.container.style.display = 'none';
+        }.bind(this), 500);
     }
 
     _render() {
         this.options.container.style.display = 'flex';
+        this.options.container.style.opacity = 1;
         this.container = document.createElement('div');
         this.options.container.appendChild(this.container);
         this.options.container.setAttribute('class', this.options.container.getAttribute('class')+ ' ' + this.className + '-container');

@@ -4,6 +4,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	opacity: 1;
+	transition: all .5s;
 }
 
 .mr-loading-circle{
