@@ -80,6 +80,7 @@ h1, h2{
 
 .mr-icon{
     padding: 10px;
+	margin: 5px;
     border-radius: 5px;
     transition: all .5s;
     width: 50px;
