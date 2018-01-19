@@ -16,10 +16,8 @@
         <p id="desc" class="desc"></p>
         <h2>Example</h2>
         <section class="example">
-            <div class="circle" style="float: left;"></div>
-            <div class="rect" style="float: left; margin-left: 50px;"></div>
-            <div class="rect-switch" style="float: left; margin-left: 50px;"></div>
-            <button class="remove" style="float: left; margin-left: 50px;">remove first loading</button>
+            <button class="open">date</button>
+            <div class="datepicker"></div>
         </section>
         <h2>API</h2>
         <p class="api">
@@ -40,32 +38,16 @@
         </table>
     </section>
     <script type="module">
-        import { Loading, Button } from '../src/mr.js';
+        import { Datepicker, Button } from '../src/mr.js';
         import fetchConfig from './tool.js';
-        fetchConfig('./config/loading.json');
-
-        let circle = document.querySelector('.circle');
-        let circleLoading = new Loading({
-            container: circle
-        })
-
-        let rect = document.querySelector('.rect');
-        let rect2 = document.querySelector('.rect-switch');
-        new Loading({
-            container: rect,
-            type: 'rect'
-        })
-        new Loading({
-            container: rect2,
-            type: 'switch-rect'
-        })
-
-        let remove = document.querySelector('.remove');
+        fetchConfig('./config/draggable.json');
+        let btn = document.querySelector('.open');
         new Button({
-            container: remove
-        })
-        remove.onclick = function() {
-            circleLoading.destroy();
+            container: btn
+        });
+        let datepicker = document.querySelector('.datepicker');
+        btn.onclick = function() {
+            new Datepicker();
         }
     </script>
 
