@@ -34,6 +34,8 @@ export default class Loading {
             this._renderLoading(2);
         } else if (this.options.type === 'rect') {
             this._renderLoading(3);
+        } else if (this.options.type === 'stretch-rect') {
+            this._renderLoading(5);
         }
     }
 

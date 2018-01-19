@@ -19,6 +19,7 @@
             <div class="circle" style="float: left;"></div>
             <div class="rect" style="float: left; margin-left: 50px;"></div>
             <div class="rect-switch" style="float: left; margin-left: 50px;"></div>
+            <div class="rect-stretch" style="float: left; margin-left: 50px;"></div>
             <button class="remove" style="float: left; margin-left: 50px;">remove first loading</button>
         </section>
         <h2>API</h2>
@@ -51,6 +52,7 @@
 
         let rect = document.querySelector('.rect');
         let rect2 = document.querySelector('.rect-switch');
+        let rect3 = document.querySelector('.rect-stretch');
         new Loading({
             container: rect,
             type: 'rect'
@@ -58,6 +60,10 @@
         new Loading({
             container: rect2,
             type: 'switch-rect'
+        })
+        new Loading({
+            container: rect3,
+            type: 'stretch-rect'
         })
 
         let remove = document.querySelector('.remove');
