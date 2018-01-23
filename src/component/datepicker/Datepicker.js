@@ -74,6 +74,7 @@ export default class DatePicker {
         okBtn.onclick = function (e) {
             this._rain(e);
             this.background.parentNode.removeChild(this.background);
+            this.options.e.target.value = this.date.toLocaleDateString();
             console.log(this.date.toLocaleDateString());
         }.bind(this);
     }
@@ -147,7 +148,8 @@ export default class DatePicker {
                         } else {
                             span.setAttribute('class', 'mr-date-picker-day');
                         }
-                        span.onclick = function () {
+                        span.onclick = function (e) {
+                            this._rain(e);
                             this._clickDay(span);
                         }.bind(this);
                         span.innerText = index - fromWeek;

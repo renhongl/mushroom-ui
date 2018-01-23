@@ -16,7 +16,7 @@
         <p id="desc" class="desc"></p>
         <h2>Example</h2>
         <section class="example">
-            <button class="open">date</button>
+            <input type="text" class="open" value=""/>
             <div class="datepicker"></div>
         </section>
         <h2>API</h2>
@@ -42,12 +42,14 @@
         import fetchConfig from './tool.js';
         fetchConfig('./config/draggable.json');
         let btn = document.querySelector('.open');
-        new Button({
-            container: btn
-        });
+        // new Button({
+        //     container: btn
+        // });
         let datepicker = document.querySelector('.datepicker');
-        btn.onclick = function() {
-            new Datepicker();
+        btn.onclick = function(e) {
+            let date = new Datepicker({
+                e: e
+            });
         }
     </script>
 
