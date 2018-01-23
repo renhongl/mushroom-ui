@@ -8,6 +8,8 @@ import Button from './component/button/index.js';
 import Carousel from './component/carousel/index.js';
 import Loading from './component/loading/index.js';
 import Datepicker from './component/datepicker/index.js';
+import Preview from './component/preview/index.js';
+
 
 
 
@@ -20,4 +22,5 @@ export {
     Carousel,
     Loading,
     Datepicker,
+    Preview,
 }
