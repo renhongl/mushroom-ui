@@ -108,7 +108,7 @@ export default class DatePicker {
             monthP.style.opacity = 1;
             yearP.style.transform = 'translateY(0%)';
             yearP.style.opacity = 1;
-        }.bind(this), 500);
+        }.bind(this), 100);
     }
 
     _fromWeek(date, day) {
