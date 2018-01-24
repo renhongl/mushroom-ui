@@ -18,7 +18,15 @@
 	overflow: hidden;
 	left: 50%;
 	top: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -60%);
+	animation: mr-date-picker-load .3s ease-out;
+	animation-fill-mode: forwards;
+}
+
+@keyframes mr-date-picker-load{
+	to{
+		transform: translate(-50%, -50%);
+	}
 }
 
 .mr-date-picker-day {
@@ -224,4 +232,8 @@
 		height: 100px;
 		opacity: 0;
 	}
+}
+
+.mr-date-picker-month-span{
+	transition: all .1s;
 }

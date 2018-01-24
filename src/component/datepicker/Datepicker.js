@@ -11,6 +11,7 @@ export default class DatePicker {
         this.dayContainer = document.createElement('div');
         this.dayContainer.setAttribute('class', 'mr-date-picker-day-container');
         this.monthSpan = document.createElement('span');
+        
         this.background.setAttribute('class', 'mr-date-picker-background');
         document.body.appendChild(this.background);
         this.background.appendChild(this.container);
@@ -215,6 +216,7 @@ export default class DatePicker {
     _renderMonth() {
         this.monthContainer.removeChild(this.monthSpan);
         this.monthSpan = document.createElement('span');
+        this.monthSpan.setAttribute('class', 'mr-date-picker-month-span');
         this.monthSpan.innerText = this.monthArr[this.month] + '  ' + this.year;
         this.monthContainer.insertBefore(this.monthSpan, this.monthContainer.childNodes[1]);
     }
